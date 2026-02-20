@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Primeira página com JS</title>
+  </head>
+  <body>
+    <h1>Minha primeira página com Javascript</h1>
+
+    <button id="btnFala">Clique aqui!</button>
+
+    <br />
+
+    <form id="formMensagem">
+      <label for="mensagem">Digite uma mensagem:</label>
+      <input id="mensagem" type="text" required />
+      <button type="submit">Adicionar</button>
+
+      <p id="erro"></p>
+    </form>
+
+    <h2>Mensagens salvas (em memória)</h2>
+    <ul id="lista"></ul>
+
+<button id="btnSaibaMais">Saiba mais</button>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar">&times;</span>
+    <h2>Sobre o Projeto</h2>
+    <p>
+      Este site foi feito com CSS, JavaScript e HTML.
+    </p>
+  </div>
+</div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
