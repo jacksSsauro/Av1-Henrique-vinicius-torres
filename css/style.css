@@ -86,4 +86,3 @@ button[type="button"]{background:#f3f4f6;border:1px solid #e6e9ef;padding:8px 10
 
 /* acessibilidade: foco */
 button:focus,input:focus,textarea:focus{outline:3px solid rgba(37,99,235,0.18);outline-offset:2px}
-

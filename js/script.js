@@ -56,7 +56,20 @@ function render() {
   localStorage.setItem('mensagens', JSON.stringify(mensagens));
   render();
     });
-    li.append(span, document.createTextNode(" "), btnExcluir);
+    const btnEdit = document.createElement("button");
+    btnEdit.type = "button";
+    btnEdit.textContent = "Editar";
+
+    btnEdit.addEventListener("click", () => {
+      input.value = mensagens[indexAtual];
+      input.focus();
+      editandoIndex = indexAtual;
+
+      erro.textContent =
+        "Editando item " + (indexAtual + 1) + " (envie para salvar)";
+    });
+
+    li.append(span, document.createTextNode(" "), btnEdit, document.createTextNode(" "), btnExcluir);
     listaMensagens.append(li);
   }
 }
@@ -102,34 +115,4 @@ function falar() {
 const botao = document.getElementById("btnFala");
 if (botao) {
   botao.addEventListener("click", falar);
-}
-
-//const botao2 = document.getElementById("btnFala2");
-//botao2.addEventListener("click", falar);
-
-// Modal 'Saiba mais'
-const btnSaibaMais = document.getElementById('btnSaibaMais');
-const modal = document.getElementById('modal');
-if (btnSaibaMais && modal) {
-  const fechar = modal.querySelector('.fechar');
-
-  btnSaibaMais.addEventListener('click', () => {
-    modal.style.display = 'block';
-  });
-
-  if (fechar) {
-    fechar.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  }
-
-  // fechar ao clicar fora do conteúdo
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-
-  // fechar com Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') modal.style.display = 'none';
-  });
 }
