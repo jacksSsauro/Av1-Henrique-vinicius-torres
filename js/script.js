@@ -5,8 +5,7 @@ const listaMensagens = document.querySelector("#lista");
 
 //"Banco de dados" em memória (array)
 // carregar mensagens do localStorage (se houver)
-let mensagens = JSON.parse(localStorage.getItem('mensagens') || '[]');
-
+let mensagens = []
 let editandoIndex = null;
 
 function validarTexto(texto) {
@@ -53,7 +52,7 @@ function render() {
     btnExcluir.addEventListener("click", () => {
       mensagens.splice(indexAtual, 1);
   // salvar e re-renderizar
-  localStorage.setItem('mensagens', JSON.stringify(mensagens));
+ 
   render();
     });
     const btnEdit = document.createElement("button");
@@ -97,7 +96,7 @@ form.addEventListener("submit", (event) => {
   }
 
   // salvar e re-renderizar
-  localStorage.setItem('mensagens', JSON.stringify(mensagens));
+
   render();
 
   input.value = "";
